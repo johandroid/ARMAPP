@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="415255e2-1339-4b5c-8b54-db0e6ca78a03" name="Default" comment="Cosa inicial de inicial">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ARMAPP.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/p1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/20k_c1.txt" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/20k_c1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/20k_c2.txt" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/20k_c2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/ChangeLog" afterPath="$PROJECT_DIR$/rfreenet2/phplot/ChangeLog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/PHPexcel/PHPExcel/Reader/Excel5.php" afterPath="$PROJECT_DIR$/rfreenet2/PHPexcel/PHPExcel/Reader/Excel5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/FAQ.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/FAQ.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/NEWS.txt" afterPath="$PROJECT_DIR$/rfreenet2/phplot/NEWS.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/README.txt" afterPath="$PROJECT_DIR$/rfreenet2/phplot/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/acceptpagebreak.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/acceptpagebreak.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actuacion_gw.html.php" afterPath="$PROJECT_DIR$/rfreenet2/actuacion_gw.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actuacion_gw_low.html.php" afterPath="$PROJECT_DIR$/rfreenet2/actuacion_gw_low.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actuacion_nodo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/actuacion_nodo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actuacion_nodo_updatable.html.php" afterPath="$PROJECT_DIR$/rfreenet2/actuacion_nodo_updatable.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actuacion_telemando.html.php" afterPath="$PROJECT_DIR$/rfreenet2/actuacion_telemando.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_gw.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_gw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_nodo.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_nodo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_utc.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_imagen_utc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_gw.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_gw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_nodo.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_nodo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_utc.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_posicion_utc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/actualizar_sesion.php" afterPath="$PROJECT_DIR$/rfreenet2/actualizar_sesion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addfont.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addfont.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addlink.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addlink.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addpage.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/addpage.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_anyade_evento_blacklist.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_anyade_evento_blacklist.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_anyadir_cliente.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_anyadir_cliente.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_anyadir_cliente_old.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_anyadir_cliente_old.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_anyadir_usuario.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_anyadir_usuario.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_clientes.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_clientes.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_clientes_old.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_clientes_old.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_configura_email.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_configura_email.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_configura_eventos.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_configura_eventos.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_configura_sms.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_configura_sms.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_configuracion.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_configuracion.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_control_consumo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_control_consumo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_mod_cliente.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_mod_cliente.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_mod_cliente_old.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_mod_cliente_old.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_mod_usuario.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_mod_usuario.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/admin_usuarios.html.php" afterPath="$PROJECT_DIR$/rfreenet2/admin_usuarios.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/alarma_reponer.php" afterPath="$PROJECT_DIR$/rfreenet2/alarma_reponer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/alarmas.html.php" afterPath="$PROJECT_DIR$/rfreenet2/alarmas.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/alarmas_historico.html.php" afterPath="$PROJECT_DIR$/rfreenet2/alarmas_historico.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/aliasnbpages.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/aliasnbpages.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/almohanad.php" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/almohanad.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/anyadir_gw.html.php" afterPath="$PROJECT_DIR$/rfreenet2/anyadir_gw.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/anyadir_gw_low.html.php" afterPath="$PROJECT_DIR$/rfreenet2/anyadir_gw_low.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/anyadir_instalacion.html.php" afterPath="$PROJECT_DIR$/rfreenet2/anyadir_instalacion.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/anyadir_utc.html.php" afterPath="$PROJECT_DIR$/rfreenet2/anyadir_utc.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/arialunicid0.php" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/arialunicid0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/ayuda.html.php" afterPath="$PROJECT_DIR$/rfreenet2/ayuda.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/images/bug.eps" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/images/bug.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/calculo_hora_et.php" afterPath="$PROJECT_DIR$/rfreenet2/calculo_hora_et.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/calculo_hora_instalacion.php" afterPath="$PROJECT_DIR$/rfreenet2/calculo_hora_instalacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/css/calendar.css" afterPath="$PROJECT_DIR$/rfreenet2/css/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/calendar_eu.js" afterPath="$PROJECT_DIR$/rfreenet2/js/calendar_eu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/calligra.afm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/calligra.afm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/calligra.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/calligra.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_MACs_Suscriptor.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_MACs_Suscriptor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_actuacion_telemando.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_actuacion_telemando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_clientes.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_clientes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_clientes_user.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_clientes_user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_consumo_email.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_consumo_email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_consumo_sms.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_consumo_sms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_coordenadas_gw.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_coordenadas_gw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_datos_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_datos_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_dispositivos_instalacion.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_dispositivos_instalacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_email_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_email_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_estado_procesos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_estado_procesos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_eventos_telemando.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_eventos_telemando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_gateways.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_gateways.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_gateways_low.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_gateways_low.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_informe_et_csv.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_informe_et_csv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_informe_et_pdf.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_informe_et_pdf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_informe_plantilla.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_informe_plantilla.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_instalacion.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_instalacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_instalaciones.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_instalaciones.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_instalaciones_admin.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_instalaciones_admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_lista_instalaciones.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_lista_instalaciones.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_magnitudes.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_magnitudes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_nodos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_nodos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_nuevos_nodos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_nuevos_nodos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_admin_blacklist.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_admin_blacklist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_admin_email.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_admin_email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_admin_eventos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_admin_eventos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_admin_rx.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_admin_rx.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_admin_sms.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_admin_sms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_email.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_rx.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_rx.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_saldo_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_saldo_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_sms.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_sms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_telemando.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_telemando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_params_utc.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_params_utc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_plantilla_datos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_plantilla_datos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_procesado.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_procesado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_salidas_telemando.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_salidas_telemando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_sensores_telemando.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_sensores_telemando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_sms_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_sms_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_sms_pendientes.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_sms_pendientes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tabla_alarmas.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tabla_alarmas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tabla_alarmas_nuevas.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tabla_alarmas_nuevas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tabla_datos.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tabla_datos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tabla_datos_diarios.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tabla_datos_diarios.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tabla_procesado.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tabla_procesado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tipo_sensores.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tipo_sensores.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tipo_utcs.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tipo_utcs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tooltip_nodo.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tooltip_nodo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_tooltip_utc.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_tooltip_utc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_usuarios.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_usuarios.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_utcs.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_utcs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_versiones_gw.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_versiones_gw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_vista_general_gw.html.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_vista_general_gw.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_vista_general_medidas_gw.html.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_vista_general_medidas_gw.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_vista_general_medidas_nodo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_vista_general_medidas_nodo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_vista_general_nodo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_vista_general_nodo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/carga_vista_general_utc.html.php" afterPath="$PROJECT_DIR$/rfreenet2/carga_vista_general_utc.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/cargar_gw_UTC.php" afterPath="$PROJECT_DIR$/rfreenet2/cargar_gw_UTC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/cell.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/cell.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/cliente_anyade.php" afterPath="$PROJECT_DIR$/rfreenet2/cliente_anyade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/cliente_elimina.php" afterPath="$PROJECT_DIR$/rfreenet2/cliente_elimina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/cliente_modifica.php" afterPath="$PROJECT_DIR$/rfreenet2/cliente_modifica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/close.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/close.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/comprueba_gw_estacion.php" afterPath="$PROJECT_DIR$/rfreenet2/comprueba_gw_estacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/comunica.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/comunica.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/comunicar_gateway.php" afterPath="$PROJECT_DIR$/rfreenet2/comunicar_gateway.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_email.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_email.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_general.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_general.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_gw.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_gw.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_gw_imagen.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_gw_imagen.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_gw_low.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_gw_low.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_instalacion.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_instalacion.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_nodo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_nodo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_nodo_avanzada.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_nodo_avanzada.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_nodo_imagen.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_nodo_imagen.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_notificaciones.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_notificaciones.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_procesado.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_procesado.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_sms.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_sms.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_telemando.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_telemando.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_utc.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_utc.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configuracion_utc_imagen.html.php" afterPath="$PROJECT_DIR$/rfreenet2/configuracion_utc_imagen.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/configurar_idioma.php" afterPath="$PROJECT_DIR$/rfreenet2/configurar_idioma.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/convertir_medidas.php" afterPath="$PROJECT_DIR$/rfreenet2/convertir_medidas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/courier.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/courier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/datepicker/locales/cs_CZ.js" afterPath="$PROJECT_DIR$/rfreenet2/js/datepicker/locales/cs_CZ.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/datos.html.php" afterPath="$PROJECT_DIR$/rfreenet2/datos.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/denied_access.html.php" afterPath="$PROJECT_DIR$/rfreenet2/denied_access.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_gw.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_gw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_gw_aux.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_gw_aux.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_nodo.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_nodo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_nodo_aux.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_nodo_aux.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_utc.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_utc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_imagen_utc_aux.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_imagen_utc_aux.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/descargar_preview_imagen.php" afterPath="$PROJECT_DIR$/rfreenet2/descargar_preview_imagen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxcommon.js" afterPath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxcommon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxcontainer.js" afterPath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxcontainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/dhtmlxcontainer.js" afterPath="$PROJECT_DIR$/rfreenet2/js/dhtmlxcontainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar.css" afterPath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar.js" afterPath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/ext/dhtmlxtabbar_deprecated.js" afterPath="$PROJECT_DIR$/rfreenet2/codebase/ext/dhtmlxtabbar_deprecated.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar_start.js" afterPath="$PROJECT_DIR$/rfreenet2/codebase/dhtmlxtabbar_start.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/dlbScriptCrossBrowser.js" afterPath="$PROJECT_DIR$/rfreenet2/js/dlbScriptCrossBrowser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/elimina_admin_evento_blacklist.php" afterPath="$PROJECT_DIR$/rfreenet2/elimina_admin_evento_blacklist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/elimina_informe_plantilla.php" afterPath="$PROJECT_DIR$/rfreenet2/elimina_informe_plantilla.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/elimina_sms_pendientes_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/elimina_sms_pendientes_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/eliminar_gateway.html.php" afterPath="$PROJECT_DIR$/rfreenet2/eliminar_gateway.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/eliminar_nodo.html.php" afterPath="$PROJECT_DIR$/rfreenet2/eliminar_nodo.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/eliminar_utc.html.php" afterPath="$PROJECT_DIR$/rfreenet2/eliminar_utc.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/empty_client.html.php" afterPath="$PROJECT_DIR$/rfreenet2/empty_client.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/enviar_comando.php" afterPath="$PROJECT_DIR$/rfreenet2/enviar_comando.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/enviar_pw_olvidado.php" afterPath="$PROJECT_DIR$/rfreenet2/enviar_pw_olvidado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/error.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/error.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/evento_blacklist_anyadir.php" afterPath="$PROJECT_DIR$/rfreenet2/evento_blacklist_anyadir.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/ex.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/ex.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/footer.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/footer.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/fpdf.css" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/fpdf.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/fpdf.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/fpdf.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/fpdf.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/fpdf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/fpdf.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/fpdf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_ajax.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_aux.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_aux.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_aux.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_aux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_check.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_check.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_datos.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_datos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_db.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_db.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_gw.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_gw.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_imagen.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_imagen.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_indice.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_indice.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_informes.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_informes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_mapas.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_mapas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_medidas.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_medidas.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_medidas.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_medidas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_nodos.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_nodos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_principal.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_principal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_principal_admin.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_principal_admin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inc/funciones_sensores.inc" afterPath="$PROJECT_DIR$/rfreenet2/inc/funciones_sensores.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_submenu.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_submenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/funciones_submenu_admin.js" afterPath="$PROJECT_DIR$/rfreenet2/js/funciones_submenu_admin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/getstringwidth.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/getstringwidth.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/getx.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/getx.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/gety.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/gety.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/guarda_informe_plantilla.php" afterPath="$PROJECT_DIR$/rfreenet2/guarda_informe_plantilla.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_actuacion.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_actuacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_eliminar.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_eliminar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lectura.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lectura.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_notifica.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_notifica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_sensores.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_sensores.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_versiones.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lecturaDB_versiones.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_lectura_tooltip.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_lectura_tooltip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_modificacion.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_modificacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_modificacionDB.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_modificacionDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_modificacion_nombre.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_modificacion_nombre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_nuevo.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_nuevo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/gw_nuevo_low.php" afterPath="$PROJECT_DIR$/rfreenet2/gw_nuevo_low.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/header.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/header.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helvetica.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helvetica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticab.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticabi.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticabi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticai.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/helveticai.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/histo.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/histo.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/image.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/image.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/index.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/index.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/index.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/index.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/WebApp/index.html" afterPath="$PROJECT_DIR$/rfreenet2/WebApp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/index.php" afterPath="$PROJECT_DIR$/rfreenet2/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/index_m.php" afterPath="$PROJECT_DIR$/rfreenet2/index_m.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/info.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/info.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/informes_csv.html.php" afterPath="$PROJECT_DIR$/rfreenet2/informes_csv.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/informes_grafica.html.php" afterPath="$PROJECT_DIR$/rfreenet2/informes_grafica.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inicio.php" afterPath="$PROJECT_DIR$/rfreenet2/inicio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/inicioJohan.php" afterPath="$PROJECT_DIR$/rfreenet2/inicioJohan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_anyade.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_anyade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_elimina.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_elimina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_elimina_dispositivos.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_elimina_dispositivos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_lecturaDB_sensores.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_lecturaDB_sensores.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_modifica.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_modifica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_reasigna_dispositivos.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_reasigna_dispositivos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalacion_reasignar.html.php" afterPath="$PROJECT_DIR$/rfreenet2/instalacion_reasignar.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/instalaciones.html.php" afterPath="$PROJECT_DIR$/rfreenet2/instalaciones.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/install.txt" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/install.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/jQuery.dualListBox-1.3.js" afterPath="$PROJECT_DIR$/rfreenet2/js/jQuery.dualListBox-1.3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/css/johan.css" afterPath="$PROJECT_DIR$/rfreenet2/css/johan.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/jquery.dualListBox-1.3.min.js" afterPath="$PROJECT_DIR$/rfreenet2/js/jquery.dualListBox-1.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/jquery.dualListBox-1.3.min_kta.js" afterPath="$PROJECT_DIR$/rfreenet2/js/jquery.dualListBox-1.3.min_kta.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/flot/jquery.flot.pie.js" afterPath="$PROJECT_DIR$/rfreenet2/flot/jquery.flot.pie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/license.txt" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/license.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/line.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/line.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/link.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/link.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/ln.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/ln.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/WebApp/js/main.js" afterPath="$PROJECT_DIR$/rfreenet2/WebApp/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/makefont/makefont.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/makefont/makefont.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/makefont.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/makefont.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/mapa.html.php" afterPath="$PROJECT_DIR$/rfreenet2/mapa.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/maps_api.php" afterPath="$PROJECT_DIR$/rfreenet2/maps_api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/maps_update_api.php" afterPath="$PROJECT_DIR$/rfreenet2/maps_update_api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/modifica_procesado.php" afterPath="$PROJECT_DIR$/rfreenet2/modifica_procesado.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/modifica_saldo_sms_cliente.php" afterPath="$PROJECT_DIR$/rfreenet2/modifica_saldo_sms_cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/modo_offline.html.php" afterPath="$PROJECT_DIR$/rfreenet2/modo_offline.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/modo_offline_obtener.php" afterPath="$PROJECT_DIR$/rfreenet2/modo_offline_obtener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/multicell.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/multicell.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/mysql_table.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/mysql_table/mysql_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/datepicker/locales/nl_NL.js" afterPath="$PROJECT_DIR$/rfreenet2/js/datepicker/locales/nl_NL.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_actuacion.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_actuacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_eliminar.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_eliminar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lectura.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lectura.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_notifica.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_notifica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_param.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_param.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_sensores.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lecturaDB_sensores.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lectura_param.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lectura_param.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_lectura_tooltip.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_lectura_tooltip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_modificacion.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_modificacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_modificacionDB.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_modificacionDB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_modificacion_nombre.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_modificacion_nombre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/nodo_modificacion_offline.php" afterPath="$PROJECT_DIR$/rfreenet2/nodo_modificacion_offline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/notificaciones.html.php" afterPath="$PROJECT_DIR$/rfreenet2/notificaciones.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/obtener_XML_AJAX.php" afterPath="$PROJECT_DIR$/rfreenet2/obtener_XML_AJAX.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/obtener_cadena_AJAX.php" afterPath="$PROJECT_DIR$/rfreenet2/obtener_cadena_AJAX.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/operacion_proceso.php" afterPath="$PROJECT_DIR$/rfreenet2/operacion_proceso.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/output.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/output.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/pageno.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/pageno.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/paises.txt" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/paises.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/images/pelican.ai" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/images/pelican.ai" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/perfil.html.php" afterPath="$PROJECT_DIR$/rfreenet2/perfil.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/phplot.php" afterPath="$PROJECT_DIR$/rfreenet2/phplot/phplot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/phplot_data.php" afterPath="$PROJECT_DIR$/rfreenet2/phplot/phplot_data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/flot/examples/pie.html" afterPath="$PROJECT_DIR$/rfreenet2/flot/examples/pie.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/css/plantilla_css.css" afterPath="$PROJECT_DIR$/rfreenet2/css/plantilla_css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/procesado.html.php" afterPath="$PROJECT_DIR$/rfreenet2/procesado.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/utils/src/readme.txt" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/utils/src/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/rect.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/rect.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/rellenar_div_principal.php" afterPath="$PROJECT_DIR$/rfreenet2/rellenar_div_principal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/rellenar_div_submenu.php" afterPath="$PROJECT_DIR$/rfreenet2/rellenar_div_submenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/phplot/rgb.inc.php" afterPath="$PROJECT_DIR$/rfreenet2/phplot/rgb.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/sesion_caducada.html.php" afterPath="$PROJECT_DIR$/rfreenet2/sesion_caducada.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setauthor.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setauthor.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setautopagebreak.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setautopagebreak.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setcompression.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setcompression.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setcreator.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setcreator.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setdisplaymode.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setdisplaymode.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setdrawcolor.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setdrawcolor.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfillcolor.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfillcolor.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfont.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfont.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfontsize.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setfontsize.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setkeywords.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setkeywords.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setleftmargin.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setleftmargin.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setlinewidth.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setlinewidth.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setlink.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setlink.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setmargins.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setmargins.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setrightmargin.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setrightmargin.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setsubject.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setsubject.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settextcolor.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settextcolor.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settitle.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settitle.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settopmargin.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/settopmargin.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setx.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setx.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setxy.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/setxy.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/sety.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/sety.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/js/shadedborder.js" afterPath="$PROJECT_DIR$/rfreenet2/js/shadedborder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_gateways.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_gateways.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_gateways_low.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_gateways_low.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php.save.1" afterPath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php.save.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php.save" afterPath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php.save" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_nodos.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nuevo_gateway.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_nuevo_gateway.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nuevo_utc.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_nuevo_utc.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php.save.1" afterPath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php.save.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php.save" afterPath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php.save" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_nuevos_nodos.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/situar_utcs.html.php" afterPath="$PROJECT_DIR$/rfreenet2/situar_utcs.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/soporte.html.php" afterPath="$PROJECT_DIR$/rfreenet2/soporte.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/symbol.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/symbol.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/symbol.php" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/symbol.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/text.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/text.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/images/tiger.ai" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/images/tiger.ai" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/times.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/times.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesb.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesbi.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesi.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/timesi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto1.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto1.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto1.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto2.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto2.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto2.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto3.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto3.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto3.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto4.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto4.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto4.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto5.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto5.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto5.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto6.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto6.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto6.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto7.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto7.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto7.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/tutorial/tuto7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/usuario_anyade.php" afterPath="$PROJECT_DIR$/rfreenet2/usuario_anyade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/usuario_elimina.php" afterPath="$PROJECT_DIR$/rfreenet2/usuario_elimina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/usuario_modifica.php" afterPath="$PROJECT_DIR$/rfreenet2/usuario_modifica.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/usuario_modifica_pw.php" afterPath="$PROJECT_DIR$/rfreenet2/usuario_modifica_pw.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/usuarios.html.php" afterPath="$PROJECT_DIR$/rfreenet2/usuarios.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_eliminar.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_eliminar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_lecturaDB_params.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_lecturaDB_params.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_lectura_params.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_lectura_params.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_lectura_sensores.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_lectura_sensores.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_modificacion.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_modificacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/utc_nuevo.php" afterPath="$PROJECT_DIR$/rfreenet2/utc_nuevo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/vista_general.html.php" afterPath="$PROJECT_DIR$/rfreenet2/vista_general.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/vista_general_medidas.html.php" afterPath="$PROJECT_DIR$/rfreenet2/vista_general_medidas.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/write.htm" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/doc/write.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/fpdf16/font/zapfdingbats.php" afterPath="$PROJECT_DIR$/rfreenet2/fpdf16/font/zapfdingbats.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/zapfdingbats.php" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/zapfdingbats.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/zarbold.php" afterPath="$PROJECT_DIR$/rfreenet2/tcpdf/fonts/zarbold.php" />
+    </list>
+    <ignored path="ARMAPP.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ARMAPP" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rfreenet2/PHPexcel/PHPExcel/Shared/JAMA/docs/includes/navbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="165">
+              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="funciones_aux.inc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rfreenet2/inc/funciones_aux.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7221269" vertical-offset="2924" max-vertical-offset="3825">
+              <caret line="223" column="18" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Johan" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/p1.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="41" />
+    <option name="y" value="-4" />
+    <option name="width" value="1879" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ARMAPP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ARMAPP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ARMAPP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="415255e2-1339-4b5c-8b54-db0e6ca78a03" name="Default" comment="" />
+      <created>1420649715713</created>
+      <option name="number" value="Default" />
+      <updated>1420649715713</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Cosa inicial de inicial">
+      <created>1420651361928</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1420651361928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32953367" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298857" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986391" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Primer mensaje" />
+    <MESSAGE value="Cosa inicial de inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cosa inicial de inicial" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/p1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rfreenet2/PHPexcel/PHPExcel/Shared/JAMA/docs/includes/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="165">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rfreenet2/inc/funciones_aux.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7221269" vertical-offset="2924" max-vertical-offset="3825">
+          <caret line="223" column="18" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
