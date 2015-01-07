@@ -1,0 +1,111 @@
+<?php session_start();
+include 'inc/idiomas.inc';
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>RFreeNET Map</title>
+	<link rel="stylesheet" href="css/plantilla_css.css" type="text/css"/>
+	<?php
+	include 'inc/key_google_maps.inc';
+        echo '<script src="http://maps.googleapis.com/maps/api/js?libraries=weather&key='.$key_google_maps.'&sensor=false&amp;hl='.$_SESSION['opcion_idioma'].'" type="text/javascript"></script>';
+	?>
+	<script type="text/javascript" src="js/funciones_mapas.js?time=<?php echo(filemtime("js/funciones_mapas.js"));?>"> </script>
+	<script type="text/javascript" src="js/funciones_principal.js?time=<?php echo(filemtime("js/funciones_principal.js"));?>"></script>
+	<script type="text/JavaScript">
+	var map;
+	var marcadores_nodos = new Array(1000);
+	var marcadores_gateways = new Array(200);
+	var marcadores_utcs = new Array(600);
+	var tipo_gw_low = 1;
+	var tipo_gw = 0;
+	
+	var infowindow = new google.maps.InfoWindow();
+	
+	function load()
+	{
+		if (top.document.getElementById("comboInstalaciones").length > 0)
+		{
+			var mapOptions = {
+				disableDoubleClickZoom: true,
+				streetViewControl: false,
+			    zoom: 8,
+			    center: new google.maps.LatLng(41.633, 0.8),
+			    mapTypeId: google.maps.MapTypeId.SATELLITE
+		  	}
+  			map = new google.maps.Map(document.getElementById("mapdiv"), mapOptions);
+			recargar_nodos_mapa(top.document.getElementById("db_cliente").value, top.document.getElementById("comboInstalaciones").options[top.document.getElementById("comboInstalaciones").selectedIndex].value);
+			alert(iObtener_Cadena_AJAX('general245'));
+		}
+	}
+
+	function recargar_nodos_mapa(db_cliente, instalacion)
+	{
+		var xmlHttpgrMap;
+		var sPrincipal;
+		
+		url = "maps_api.php?cliente_db=" + db_cliente + "&instalacion_id=" + instalacion;
+		xmlHttpgrMap= GetXmlHttpObject();
+		xmlHttpgrMap.open("GET",url,true);
+		xmlHttpgrMap.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		xmlHttpgrMap.onreadystatechange=function()
+		{
+			if (xmlHttpgrMap.readyState==4)
+			{
+				var xml=parsear_xml(xmlHttpgrMap.responseText);
+				var markers_gateways = xml.documentElement.getElementsByTagName("gateway");
+				var markers_nodos = xml.documentElement.getElementsByTagName("nodo");
+				var markers_utcs = xml.documentElement.getElementsByTagName("utc");
+				var i;
+				var point = null;
+				var bounds = new google.maps.LatLngBounds();
+				for (i = 0; i < markers_gateways.length; i++)
+				{
+					var point = new google.maps.LatLng(parseFloat(markers_gateways[i].getAttribute("lat")),parseFloat(markers_gateways[i].getAttribute("lng")));
+					bounds.extend(point);
+					
+					if(markers_gateways[i].getAttribute("tipo") == tipo_gw_low) //Si es tipo low power permitimos moverlo, en otro caso no.
+					{	
+						marcadores_gateways[i] = createGW(map, point, 1, markers_gateways[i].getAttribute("id"), markers_gateways[i].getAttribute("tipo"), markers_gateways[i].getAttribute("nombre"), "1", "01");	
+					}
+					else
+					{	
+						marcadores_gateways[i] = createGW(map, point, 0, markers_gateways[i].getAttribute("id"), markers_gateways[i].getAttribute("tipo"), markers_gateways[i].getAttribute("nombre"), "1", "01");
+					}
+				}
+				for (i = 0; i < markers_nodos.length; i++)
+				{
+					var point = new google.maps.LatLng(parseFloat(markers_nodos[i].getAttribute("lat")),parseFloat(markers_nodos[i].getAttribute("lng")));
+					bounds.extend(point);
+	
+					marcadores_nodos[i] = createNode(map, point, 0, markers_nodos[i].getAttribute("gw"), markers_nodos[i].getAttribute("mac"), markers_nodos[i].getAttribute("ip"), markers_nodos[i].getAttribute("nombre"), "1", "01");
+				}
+				for (i = 0; i < markers_utcs.length; i++)
+				{
+					var point = new google.maps.LatLng(parseFloat(markers_utcs[i].getAttribute("lat")),parseFloat(markers_utcs[i].getAttribute("lng")));
+					bounds.extend(point);
+	
+					marcadores_utcs[i] = createUTC(map, point, 0, markers_utcs[i].getAttribute("gw_id"), markers_utcs[i].getAttribute("id"), markers_utcs[i].getAttribute("direccion"), markers_utcs[i].getAttribute("nombre"), "1", "01");
+				}			
+				if (point)
+				{
+					map.setCenter(bounds.getCenter());
+					map.fitBounds(bounds);
+				}
+			}
+		}
+		xmlHttpgrMap.send(null);
+	}
+
+	function centrar_gateway(indice_nodo)
+	{
+		map.panTo(marcadores_gateways[indice_nodo].getPosition());
+	}
+	</script>	
+</head>
+<body onload="load()">
+	<div id="mapdiv" style="height: 435px; width: 635px;" class="MapBox" align="center" valign="center" style="margin: 0 0 0 0;" background="#515151"></div>
+	<noscript><?php echo $idiomas[$_SESSION['opcion_idioma']]['disclaimer_js']?></noscript>
+</body>
+</html>

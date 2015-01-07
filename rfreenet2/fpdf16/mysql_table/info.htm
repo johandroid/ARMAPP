@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Table with MySQL</TITLE>
+<STYLE>
+BODY {font-family:"Times New Roman",serif}
+H2 {color:#4000A0}
+.st {font-weight:bold; color:#900000}
+</STYLE>
+</HEAD>
+<BODY>
+<H2>Table with MySQL</H2>
+<H4 CLASS="st">Informations</H4>Author: <A HREF="mailto:oliver@fpdf.org?subject=Table%20with%20MySQL">Olivier</A><BR>License: Freeware
+<H4 CLASS="st">Description</H4>This class allows to output a table whose content comes from a MySQL query. The table header is
+automatically printed on top of each page. The method to add a column is:<BR>
+<BR>
+<TT>function AddCol([<B>mixed</B> field [, <B>mixed</B> width [, <B>string</B> caption [, <B>string</B> align]]]])</TT><BR>
+<BR>
+<TT><U>field</U></TT>: field of the SQL query (either name or index). If -1, the column will represent
+the field in the same position in the query (default value).<BR>
+<BR>
+<TT><U>width</U></TT>: width of the column. It can be a number giving the absolute value, or a string
+of the form x% to request a percentage of the table width. If -1, the width equals the table
+width divided by the number of columns (default value).<BR>
+<BR>
+<TT><U>caption</U></TT>: caption of the column. If empty, the capitalized name of the field will
+be used (default value).<BR>
+<BR>
+<TT><U>align</U></TT>: alignment of the column content. Possible values are <TT>L</TT>, <TT>C</TT> and
+<TT>R</TT> (default is <TT>L</TT>).<BR>
+<BR>
+To output the table:<BR>
+<BR>
+<TT>function Table(<B>string</B> query [, <B>array</B> prop])</TT><BR>
+<BR>
+<TT><U>query</U></TT>: the SQL query.<BR>
+<BR>
+<TT><U>prop</U></TT>: associative array containing the table properties. Possible keys are:<BR>
+<BR>
+<DIV STYLE="margin-left:15px">
+<TT>width</TT>: width of the table. Useful if you specify column widths by percentage. The
+default value is the page width without the margins.<BR>
+<TT>align</TT>: alignment of the table in the page. Possible values are <TT>L</TT>, <TT>C</TT>
+and <TT>R</TT> (default is <TT>C</TT>).<BR>
+<TT>padding</TT>: left and right margins used inside cells. Default value is 1mm.<BR>
+<TT>HeaderColor</TT>: background color for the table header (array of the three RGB components).<BR>
+<TT>color1</TT>: background color for odd rows.<BR>
+<TT>color2</TT>: background color for even rows.<BR>
+</DIV>
+<BR>
+If no column has been defined when <TT>Table()</TT> is called, columns corresponding to all the
+fields of the query are added automatically.<BR>
+After the output of the table, all column definitions are cleared.
+</BODY>
+</HTML>

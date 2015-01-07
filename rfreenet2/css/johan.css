@@ -1,0 +1,17 @@
+.Fondo_Web
+{
+    background-color: #EEE;
+}
+
+.logo
+{
+    /*width:222px;*/
+    height:138px;
+    max-width: 180px;
+}
+.banner
+{
+    /*width:790px;*/
+    height:138px;
+    max-width: 7800px;
+}

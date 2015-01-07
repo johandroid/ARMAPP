@@ -1,0 +1,383 @@
+<?php
+ini_set('memory_limit','500M');
+ini_set('max_execution_time','600');
+session_start();
+include 'inc/idiomas.inc';
+include 'inc/datos_db.inc';
+include 'inc/funciones_medidas.inc';
+include 'inc/funciones_sensores.inc';
+include 'inc/funciones_aux.inc';
+
+
+ob_start();
+
+//print_r($_POST);
+$cliente_db = $_POST["cliente_db"];
+$instalacion = $_POST["instalacion_id"];
+$fecha_begin = $_POST["fecha_begin2"];
+//echo $fecha_begin;
+$fecha_end = $_POST["fecha_end"];
+
+$datosgraf = $_POST["datosgraf"];
+//echo $datosgraf.'<br/>';
+$xmlgraf = simplexml_load_string($datosgraf);
+
+$cadena_ids = '';
+$cadena_magnitudes = '';
+$acumulado_horario = 0;
+$acumulado_diario = 0;
+//echo 'Se dibujaran '.$xmlgraf->graf->curve->count().' curvas<br/>';
+for ($j=0;$j<$xmlgraf->graf->curve->count();$j++)
+{
+	$ids_disp[$j]=$xmlgraf->graf->curve[$j]->data;
+	$magnitudes_disp[$j]=$xmlgraf->graf->curve[$j]->mag;
+	$tipo_graficas[$j]=$xmlgraf->graf->curve[$j]->tipo;
+	//MPT para saber si hay que restar un dia/hora si no es lineal alguna
+	if($tipo_graficas[$j]==1)
+	{
+		$acumulado_diario=1;
+	}
+	elseif($tipo_graficas[$j]==2)
+	{
+		$acumulado_horario=1;
+	}
+	//echo 'Insertando curva '.$j.' de '.$xmlgraf->graf->curve[$j]->data.' de tipo '.$xmlgraf->graf->curve[$j]->mag.'<br/>';
+	if ($j==0)
+	{
+		$mag_inicial=$xmlgraf->graf->curve[$j]->mag;
+	}
+}
+
+list($fecha_begin_ex,$hora_init_ex)= explode (" ",$fecha_begin);
+list($fecha_end_ex,$hora_end_ex)= explode (" ",$fecha_end);
+
+list($anyo_begin,$mes_begin,$pipo)= explode ("-",$fecha_begin_ex);
+list($anyo_end,$mes_end,$pipo)= explode("-",$fecha_end_ex);
+
+//echo "Mes inicio ".intval($mes_begin)." Mes fin ".intval($mes_end)."<br>";
+//echo "Anyo inicio ".intval($anyo_begin)." Anyo fin ".intval($anyo_end)."<br>";
+
+$mes_begin=intval($mes_begin);
+$mes_end=intval($mes_end);
+$anyo_begin=intval($anyo_begin);
+$anyo_end=intval($anyo_end);
+
+// Primero de todo definimos el vector temporal
+$timestamp_inicio = strtotime($fecha_begin);
+$timestamp_final = strtotime($fecha_end);
+//echo $acumulado_diario." y ".$acumulado_horario."<br>";
+//MPT Si se ha seleccionado acumulado hay que cambiar el tiempo de inicio
+
+if($acumulado_diario==1)
+{
+	//$timestamp_inicio_diario = (floor($timestamp_inicio/86400))*86400;
+	$fecha_begin_acum_diario = date("Y-m-d 00:00:00",$timestamp_inicio);
+		
+}
+if($acumulado_horario==1)
+{
+	$fecha_begin_acum_horario = date("Y-m-d H:00:00",$timestamp_inicio);
+}
+
+// Y generamos el vector de abscisas
+//$abscisas = range($timestamp_inicio,$timestamp_final,1);
+//echo "Long total: ".count($abscisas).'<br/>';
+//echo "TS =".$fecha_begin." to ".$fecha_end."<br/>";
+//echo "Probando ts desde ".$timestamp_inicio." (".date('Y:m:d H:i:s',$timestamp_inicio).") a ".$timestamp_final." (".date('Y:m:d H:i:s',$timestamp_final).")<br/>";
+
+$link = mysql_connect($db_host, $db_user, $db_pass);
+mysql_select_db($cliente_db, $link);
+$data_output = array();
+for ($ii=0;$ii<4;$ii++)
+{
+	$data_series = array();
+	if (strlen($ids_disp[$ii])>0)
+	{
+		$tipo_dispositivo[$ii] = substr($ids_disp[$ii],0,1);
+		$gw_id[$ii] = substr($ids_disp[$ii],1,4);
+		$nodo_mac[$ii] = substr($ids_disp[$ii],5,12);
+		$num_sensor_informe[$ii] = substr($ids_disp[$ii],17,2);
+		$tipo_sensor_informe[$ii] = substr($ids_disp[$ii],19,3);
+		//echo 'Insertando curva '.($ii+1).' de '.$ids_disp[$ii].' de tipo '.$magnitudes_disp[$ii].'<br/>';
+
+		// Preparamos la query para cada grafica
+		$query = "";
+		$query_final = "select * from (";
+		
+		$mes_actual=$mes_begin;
+		$anyo_actual=$anyo_begin;
+		
+		$cadena_inicial=sprintf("%02u%04u",$mes_actual,$anyo_begin);
+		$cadena_final=sprintf("%02u%04u",$anyo_actual,$anyo_end);
+		$cadena_actual=$cadena_inicial;
+		$primero = 1;
+		
+		while($cadena_actual!='FIN')
+		{
+			$NombreTabla = "cliente_eventos_".$cadena_actual;
+			//echo "Vamos a ver si la tabla ".$NombreTabla." existe<br>";
+			if (table_exists($NombreTabla,$link))
+			{
+				if($primero!=1)
+				{
+					$query_final .= " UNION ";
+				}
+				//MPT si el tipo de gráfica es continua se hace como siempre
+				if($tipo_graficas[$ii]=='0')
+				{
+					$query = sprintf("(select cliente_eventos.gw_id AS gw_id,cliente_eventos.nodo_ip as nodo_ip, IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), '000',cliente_eventos.nodo_mac) AS nodo_mac,IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), cliente_gateways.gw_nombre,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),cliente_analizadores.analizador_nombre,cliente_nodos.nodo_nombre)) AS nombre,cliente_eventos.evento_codigo AS evento_codigo,(CASE cliente_eventos.evento_codigo WHEN '500' THEN cliente_nodos.nodo_nombre_s1 WHEN '506' THEN cliente_nodos.nodo_nombre_s1 WHEN '512' THEN cliente_nodos.nodo_nombre_s1 WHEN '501' THEN cliente_nodos.nodo_nombre_s2 WHEN '507' THEN cliente_nodos.nodo_nombre_s2 WHEN '513' THEN cliente_nodos.nodo_nombre_s2 WHEN '502' THEN cliente_nodos.nodo_nombre_s3 WHEN '508' THEN cliente_nodos.nodo_nombre_s3 WHEN '514' THEN cliente_nodos.nodo_nombre_s3 WHEN '503' THEN cliente_nodos.nodo_nombre_s4 WHEN  '509' THEN cliente_nodos.nodo_nombre_s4 WHEN '515' THEN cliente_nodos.nodo_nombre_s4 WHEN '504' THEN cliente_nodos.nodo_nombre_s5 WHEN '510' THEN cliente_nodos.nodo_nombre_s5 WHEN '516' THEN cliente_nodos.nodo_nombre_s5 WHEN '505' THEN cliente_nodos.nodo_nombre_s6 WHEN '511' THEN cliente_nodos.nodo_nombre_s6 WHEN '517' THEN cliente_nodos.nodo_nombre_s6 ELSE '-' END) AS sensor_nombre,cliente_eventos.evento_valor_raw AS valor,cliente_eventos.evento_tiposensor as tiposensor, 1000*unix_timestamp(cliente_eventos.evento_fecha) AS fecha,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operacion,0) as modbus_operacion,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operando,0) as modbus_operando,cliente_params_nodo.nodo_aux_operacion%u as operacion,cliente_params_nodo.nodo_aux_constante%u as constante from (cliente_params_nodo right join (%s.rfreenet_modbus_conversion right join (%s.cliente_analizadores right join (%s.cliente_instalaciones inner join (%s.cliente_gateways join (%s.cliente_nodos right join ((%s.%s as cliente_eventos)) on (cliente_eventos.nodo_mac = cliente_nodos.nodo_mac AND cliente_eventos.gw_id=cliente_nodos.gw_id)) on (cliente_gateways.gw_id = cliente_eventos.gw_id)) on (cliente_instalaciones.instalacion_id=cliente_eventos.instalacion_id)) on (cliente_eventos.nodo_mac=cliente_analizadores.analizador_id AND cliente_eventos.evento_codigo>299 AND cliente_eventos.evento_codigo<400)) on (rfreenet_modbus_conversion.modbus_id=cliente_analizadores.analizador_tipo AND rfreenet_modbus_conversion.modbus_evento=cliente_eventos.evento_codigo)) on (cliente_params_nodo.nodo_mac=cliente_eventos.nodo_mac AND cliente_eventos.gw_id=cliente_params_nodo.gw_id)) where (cliente_eventos.evento_codigo>'000') AND (cliente_eventos.instalacion_id='%s')", (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1), (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1),$db_name_general,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$NombreTabla, $instalacion);
+					$query .= " AND evento_fecha>'".$fecha_begin."'  AND evento_fecha<'".$fecha_end."'";
+				}
+				elseif ($tipo_graficas[$ii]=='1') 
+				{
+					if($magnitudes_disp[$ii]=='PLU')
+					{
+						$query = sprintf("(select cliente_eventos.gw_id AS gw_id,cliente_eventos.nodo_ip as nodo_ip, IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), '000',cliente_eventos.nodo_mac) AS nodo_mac,IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), cliente_gateways.gw_nombre,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),cliente_analizadores.analizador_nombre,cliente_nodos.nodo_nombre)) AS nombre,cliente_eventos.evento_codigo AS evento_codigo,(CASE cliente_eventos.evento_codigo WHEN '500' THEN cliente_nodos.nodo_nombre_s1 WHEN '506' THEN cliente_nodos.nodo_nombre_s1 WHEN '512' THEN cliente_nodos.nodo_nombre_s1 WHEN '501' THEN cliente_nodos.nodo_nombre_s2 WHEN '507' THEN cliente_nodos.nodo_nombre_s2 WHEN '513' THEN cliente_nodos.nodo_nombre_s2 WHEN '502' THEN cliente_nodos.nodo_nombre_s3 WHEN '508' THEN cliente_nodos.nodo_nombre_s3 WHEN '514' THEN cliente_nodos.nodo_nombre_s3 WHEN '503' THEN cliente_nodos.nodo_nombre_s4 WHEN  '509' THEN cliente_nodos.nodo_nombre_s4 WHEN '515' THEN cliente_nodos.nodo_nombre_s4 WHEN '504' THEN cliente_nodos.nodo_nombre_s5 WHEN '510' THEN cliente_nodos.nodo_nombre_s5 WHEN '516' THEN cliente_nodos.nodo_nombre_s5 WHEN '505' THEN cliente_nodos.nodo_nombre_s6 WHEN '511' THEN cliente_nodos.nodo_nombre_s6 WHEN '517' THEN cliente_nodos.nodo_nombre_s6 ELSE '-' END) AS sensor_nombre,hex(sum(conv(cliente_eventos.evento_valor_raw,16,10))) AS valor,cliente_eventos.evento_tiposensor as tiposensor, max(1000*(floor((unix_timestamp(cliente_eventos.evento_fecha))/86400)*86400)) AS fecha,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operacion,0) as modbus_operacion,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operando,0) as modbus_operando,cliente_params_nodo.nodo_aux_operacion%u as operacion,cliente_params_nodo.nodo_aux_constante%u as constante from (cliente_params_nodo right join (%s.rfreenet_modbus_conversion right join (%s.cliente_analizadores right join (%s.cliente_instalaciones inner join (%s.cliente_gateways join (%s.cliente_nodos right join ((%s.%s as cliente_eventos)) on (cliente_eventos.nodo_mac = cliente_nodos.nodo_mac AND cliente_eventos.gw_id=cliente_nodos.gw_id)) on (cliente_gateways.gw_id = cliente_eventos.gw_id)) on (cliente_instalaciones.instalacion_id=cliente_eventos.instalacion_id)) on (cliente_eventos.nodo_mac=cliente_analizadores.analizador_id AND cliente_eventos.evento_codigo>299 AND cliente_eventos.evento_codigo<400)) on (rfreenet_modbus_conversion.modbus_id=cliente_analizadores.analizador_tipo AND rfreenet_modbus_conversion.modbus_evento=cliente_eventos.evento_codigo)) on (cliente_params_nodo.nodo_mac=cliente_eventos.nodo_mac AND cliente_eventos.gw_id=cliente_params_nodo.gw_id)) where (cliente_eventos.evento_codigo>'000') AND (cliente_eventos.instalacion_id='%s')", (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1), (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1),$db_name_general,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$NombreTabla, $instalacion);
+						$query .= " AND evento_fecha>'".$fecha_begin_acum_diario."'  AND evento_fecha<'".$fecha_end."'";			
+					}
+					else {
+						$query = sprintf("(select cliente_eventos.gw_id AS gw_id,cliente_eventos.nodo_ip as nodo_ip, IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), '000',cliente_eventos.nodo_mac) AS nodo_mac,IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), cliente_gateways.gw_nombre,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),cliente_analizadores.analizador_nombre,cliente_nodos.nodo_nombre)) AS nombre,cliente_eventos.evento_codigo AS evento_codigo,(CASE cliente_eventos.evento_codigo WHEN '500' THEN cliente_nodos.nodo_nombre_s1 WHEN '506' THEN cliente_nodos.nodo_nombre_s1 WHEN '512' THEN cliente_nodos.nodo_nombre_s1 WHEN '501' THEN cliente_nodos.nodo_nombre_s2 WHEN '507' THEN cliente_nodos.nodo_nombre_s2 WHEN '513' THEN cliente_nodos.nodo_nombre_s2 WHEN '502' THEN cliente_nodos.nodo_nombre_s3 WHEN '508' THEN cliente_nodos.nodo_nombre_s3 WHEN '514' THEN cliente_nodos.nodo_nombre_s3 WHEN '503' THEN cliente_nodos.nodo_nombre_s4 WHEN  '509' THEN cliente_nodos.nodo_nombre_s4 WHEN '515' THEN cliente_nodos.nodo_nombre_s4 WHEN '504' THEN cliente_nodos.nodo_nombre_s5 WHEN '510' THEN cliente_nodos.nodo_nombre_s5 WHEN '516' THEN cliente_nodos.nodo_nombre_s5 WHEN '505' THEN cliente_nodos.nodo_nombre_s6 WHEN '511' THEN cliente_nodos.nodo_nombre_s6 WHEN '517' THEN cliente_nodos.nodo_nombre_s6 ELSE '-' END) AS sensor_nombre,max(cliente_eventos.evento_valor_raw) AS valor,cliente_eventos.evento_tiposensor as tiposensor, max(1000*(floor((unix_timestamp(cliente_eventos.evento_fecha))/86400)*86400)) AS fecha,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operacion,0) as modbus_operacion,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operando,0) as modbus_operando,cliente_params_nodo.nodo_aux_operacion%u as operacion,cliente_params_nodo.nodo_aux_constante%u as constante from (cliente_params_nodo right join (%s.rfreenet_modbus_conversion right join (%s.cliente_analizadores right join (%s.cliente_instalaciones inner join (%s.cliente_gateways join (%s.cliente_nodos right join ((%s.%s as cliente_eventos)) on (cliente_eventos.nodo_mac = cliente_nodos.nodo_mac AND cliente_eventos.gw_id=cliente_nodos.gw_id)) on (cliente_gateways.gw_id = cliente_eventos.gw_id)) on (cliente_instalaciones.instalacion_id=cliente_eventos.instalacion_id)) on (cliente_eventos.nodo_mac=cliente_analizadores.analizador_id AND cliente_eventos.evento_codigo>299 AND cliente_eventos.evento_codigo<400)) on (rfreenet_modbus_conversion.modbus_id=cliente_analizadores.analizador_tipo AND rfreenet_modbus_conversion.modbus_evento=cliente_eventos.evento_codigo)) on (cliente_params_nodo.nodo_mac=cliente_eventos.nodo_mac AND cliente_eventos.gw_id=cliente_params_nodo.gw_id)) where (cliente_eventos.evento_codigo>'000') AND (cliente_eventos.instalacion_id='%s')", (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1), (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1),$db_name_general,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$NombreTabla, $instalacion);
+						$query .= " AND evento_fecha>'".$fecha_begin_acum_diario."'  AND evento_fecha<'".$fecha_end."'";						
+					}
+				}
+				else {
+					if($magnitudes_disp[$ii]=='PLU')
+					{
+						$query = sprintf("(select cliente_eventos.gw_id AS gw_id,cliente_eventos.nodo_ip as nodo_ip, IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), '000',cliente_eventos.nodo_mac) AS nodo_mac,IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), cliente_gateways.gw_nombre,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),cliente_analizadores.analizador_nombre,cliente_nodos.nodo_nombre)) AS nombre,cliente_eventos.evento_codigo AS evento_codigo,(CASE cliente_eventos.evento_codigo WHEN '500' THEN cliente_nodos.nodo_nombre_s1 WHEN '506' THEN cliente_nodos.nodo_nombre_s1 WHEN '512' THEN cliente_nodos.nodo_nombre_s1 WHEN '501' THEN cliente_nodos.nodo_nombre_s2 WHEN '507' THEN cliente_nodos.nodo_nombre_s2 WHEN '513' THEN cliente_nodos.nodo_nombre_s2 WHEN '502' THEN cliente_nodos.nodo_nombre_s3 WHEN '508' THEN cliente_nodos.nodo_nombre_s3 WHEN '514' THEN cliente_nodos.nodo_nombre_s3 WHEN '503' THEN cliente_nodos.nodo_nombre_s4 WHEN  '509' THEN cliente_nodos.nodo_nombre_s4 WHEN '515' THEN cliente_nodos.nodo_nombre_s4 WHEN '504' THEN cliente_nodos.nodo_nombre_s5 WHEN '510' THEN cliente_nodos.nodo_nombre_s5 WHEN '516' THEN cliente_nodos.nodo_nombre_s5 WHEN '505' THEN cliente_nodos.nodo_nombre_s6 WHEN '511' THEN cliente_nodos.nodo_nombre_s6 WHEN '517' THEN cliente_nodos.nodo_nombre_s6 ELSE '-' END) AS sensor_nombre,hex(sum(conv(cliente_eventos.evento_valor_raw,16,10))) AS valor,cliente_eventos.evento_tiposensor as tiposensor, max(1000*(floor((unix_timestamp(cliente_eventos.evento_fecha))/3600)*3600)) AS fecha,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operacion,0) as modbus_operacion,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operando,0) as modbus_operando,cliente_params_nodo.nodo_aux_operacion%u as operacion,cliente_params_nodo.nodo_aux_constante%u as constante from (cliente_params_nodo right join (%s.rfreenet_modbus_conversion right join (%s.cliente_analizadores right join (%s.cliente_instalaciones inner join (%s.cliente_gateways join (%s.cliente_nodos right join ((%s.%s as cliente_eventos)) on (cliente_eventos.nodo_mac = cliente_nodos.nodo_mac AND cliente_eventos.gw_id=cliente_nodos.gw_id)) on (cliente_gateways.gw_id = cliente_eventos.gw_id)) on (cliente_instalaciones.instalacion_id=cliente_eventos.instalacion_id)) on (cliente_eventos.nodo_mac=cliente_analizadores.analizador_id AND cliente_eventos.evento_codigo>299 AND cliente_eventos.evento_codigo<400)) on (rfreenet_modbus_conversion.modbus_id=cliente_analizadores.analizador_tipo AND rfreenet_modbus_conversion.modbus_evento=cliente_eventos.evento_codigo)) on (cliente_params_nodo.nodo_mac=cliente_eventos.nodo_mac AND cliente_eventos.gw_id=cliente_params_nodo.gw_id)) where (cliente_eventos.evento_codigo>'000') AND (cliente_eventos.instalacion_id='%s')", (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1), (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1),$db_name_general,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$NombreTabla, $instalacion);
+						$query .= " AND evento_fecha>'".$fecha_begin_acum_horario."'  AND evento_fecha<'".$fecha_end."'";	
+					}
+					else {
+						$query = sprintf("(select cliente_eventos.gw_id AS gw_id,cliente_eventos.nodo_ip as nodo_ip, IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), '000',cliente_eventos.nodo_mac) AS nodo_mac,IF (((cliente_eventos.nodo_ip = '000') OR (cliente_eventos.nodo_ip = '001')), cliente_gateways.gw_nombre,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),cliente_analizadores.analizador_nombre,cliente_nodos.nodo_nombre)) AS nombre,cliente_eventos.evento_codigo AS evento_codigo,(CASE cliente_eventos.evento_codigo WHEN '500' THEN cliente_nodos.nodo_nombre_s1 WHEN '506' THEN cliente_nodos.nodo_nombre_s1 WHEN '512' THEN cliente_nodos.nodo_nombre_s1 WHEN '501' THEN cliente_nodos.nodo_nombre_s2 WHEN '507' THEN cliente_nodos.nodo_nombre_s2 WHEN '513' THEN cliente_nodos.nodo_nombre_s2 WHEN '502' THEN cliente_nodos.nodo_nombre_s3 WHEN '508' THEN cliente_nodos.nodo_nombre_s3 WHEN '514' THEN cliente_nodos.nodo_nombre_s3 WHEN '503' THEN cliente_nodos.nodo_nombre_s4 WHEN  '509' THEN cliente_nodos.nodo_nombre_s4 WHEN '515' THEN cliente_nodos.nodo_nombre_s4 WHEN '504' THEN cliente_nodos.nodo_nombre_s5 WHEN '510' THEN cliente_nodos.nodo_nombre_s5 WHEN '516' THEN cliente_nodos.nodo_nombre_s5 WHEN '505' THEN cliente_nodos.nodo_nombre_s6 WHEN '511' THEN cliente_nodos.nodo_nombre_s6 WHEN '517' THEN cliente_nodos.nodo_nombre_s6 ELSE '-' END) AS sensor_nombre,max(cliente_eventos.evento_valor_raw) AS valor,cliente_eventos.evento_tiposensor as tiposensor, max(1000*(floor((unix_timestamp(cliente_eventos.evento_fecha))/3600)*3600)) AS fecha,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operacion,0) as modbus_operacion,IF(((cliente_eventos.evento_codigo > 299) AND (cliente_eventos.evento_codigo<400)),rfreenet_modbus_conversion.modbus_operando,0) as modbus_operando,cliente_params_nodo.nodo_aux_operacion%u as operacion,cliente_params_nodo.nodo_aux_constante%u as constante from (cliente_params_nodo right join (%s.rfreenet_modbus_conversion right join (%s.cliente_analizadores right join (%s.cliente_instalaciones inner join (%s.cliente_gateways join (%s.cliente_nodos right join ((%s.%s as cliente_eventos)) on (cliente_eventos.nodo_mac = cliente_nodos.nodo_mac AND cliente_eventos.gw_id=cliente_nodos.gw_id)) on (cliente_gateways.gw_id = cliente_eventos.gw_id)) on (cliente_instalaciones.instalacion_id=cliente_eventos.instalacion_id)) on (cliente_eventos.nodo_mac=cliente_analizadores.analizador_id AND cliente_eventos.evento_codigo>299 AND cliente_eventos.evento_codigo<400)) on (rfreenet_modbus_conversion.modbus_id=cliente_analizadores.analizador_tipo AND rfreenet_modbus_conversion.modbus_evento=cliente_eventos.evento_codigo)) on (cliente_params_nodo.nodo_mac=cliente_eventos.nodo_mac AND cliente_eventos.gw_id=cliente_params_nodo.gw_id)) where (cliente_eventos.evento_codigo>'000') AND (cliente_eventos.instalacion_id='%s')", (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1), (($tipo_dispositivo[$ii] == 'N' || $tipo_dispositivo[$ii] == 'n') ?($num_sensor_informe[$ii]+1):1),$db_name_general,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$cliente_db,$NombreTabla, $instalacion);
+						$query .= " AND evento_fecha>'".$fecha_begin_acum_horario."'  AND evento_fecha<'".$fecha_end."'";
+					}
+				}
+				
+				switch ($tipo_dispositivo[$ii])
+				{
+					case 'G':
+					case 'g':
+						//echo "Informe de gw ".$gw_id." del sensor ".$num_sensor_informe.'<br/>';				
+						$query .= " AND cliente_eventos.gw_id='".$gw_id[$ii]."'";
+						switch ($num_sensor_informe[$ii])
+						{
+							case "0":
+								$query .= " AND ((cliente_eventos.evento_codigo='600') OR (cliente_eventos.evento_codigo='625') OR (cliente_eventos.evento_codigo='650') OR (cliente_eventos.evento_codigo='675') OR (cliente_eventos.evento_codigo='700'))";
+								break;
+							case "1":
+								$query .= " AND ((cliente_eventos.evento_codigo='601') OR (cliente_eventos.evento_codigo='626') OR (cliente_eventos.evento_codigo='651') OR (cliente_eventos.evento_codigo='676') OR (cliente_eventos.evento_codigo='701'))";
+								break;
+							case "2":
+								$query .= " AND ((cliente_eventos.evento_codigo='602') OR (cliente_eventos.evento_codigo='627') OR (cliente_eventos.evento_codigo='652') OR (cliente_eventos.evento_codigo='677') OR (cliente_eventos.evento_codigo='702'))";
+								break;
+							case "3":
+								$query .= " AND ((cliente_eventos.evento_codigo='603') OR (cliente_eventos.evento_codigo='628') OR (cliente_eventos.evento_codigo='653') OR (cliente_eventos.evento_codigo='678') OR (cliente_eventos.evento_codigo='703'))";
+								break;
+							case "4":
+								$query .= " AND ((cliente_eventos.evento_codigo='604') OR (cliente_eventos.evento_codigo='629') OR (cliente_eventos.evento_codigo='654') OR (cliente_eventos.evento_codigo='679') OR (cliente_eventos.evento_codigo='704'))";
+								break;
+							case "5":
+								$query .= " AND ((cliente_eventos.evento_codigo='605') OR (cliente_eventos.evento_codigo='630') OR (cliente_eventos.evento_codigo='655') OR (cliente_eventos.evento_codigo='680') OR (cliente_eventos.evento_codigo='705'))";
+								break;
+							case "6":
+								$query .= " AND ((cliente_eventos.evento_codigo='606') OR (cliente_eventos.evento_codigo='631') OR (cliente_eventos.evento_codigo='656') OR (cliente_eventos.evento_codigo='681') OR (cliente_eventos.evento_codigo='706'))";
+								break;
+							case "7":
+								$query .= " AND ((cliente_eventos.evento_codigo='607') OR (cliente_eventos.evento_codigo='632') OR (cliente_eventos.evento_codigo='657') OR (cliente_eventos.evento_codigo='682') OR (cliente_eventos.evento_codigo='707'))";
+								break;
+							case "8":
+								$query .= " AND ((cliente_eventos.evento_codigo='608') OR (cliente_eventos.evento_codigo='633') OR (cliente_eventos.evento_codigo='658') OR (cliente_eventos.evento_codigo='683') OR (cliente_eventos.evento_codigo='708'))";
+								break;
+							default:
+								$query .= " AND ((cliente_eventos.evento_codigo>599) AND (cliente_eventos.evento_codigo<734))";
+								break;							
+						}
+						break;
+						
+					case 'N':
+					case 'n':
+						//echo "Informe de nodo ".$nodo_mac." del sensor ".$num_sensor_informe.'<br/>';
+						$query .= " AND cliente_eventos.nodo_mac='".$nodo_mac[$ii]."' AND cliente_eventos.gw_id='".$gw_id[$ii]."'";
+						switch ($num_sensor_informe[$ii])
+						{
+							case "0":
+								$query .= " AND ((cliente_eventos.evento_codigo='500') OR (cliente_eventos.evento_codigo='506') OR (cliente_eventos.evento_codigo='513'))";
+								break;
+							case "1":
+								$query .= " AND ((cliente_eventos.evento_codigo='501') OR (cliente_eventos.evento_codigo='507') OR (cliente_eventos.evento_codigo='514'))";
+								break;
+							case "2":
+								$query .= " AND ((cliente_eventos.evento_codigo='502') OR (cliente_eventos.evento_codigo='508') OR (cliente_eventos.evento_codigo='515'))";
+								break;
+							case "3":
+								$query .= " AND ((cliente_eventos.evento_codigo='503') OR (cliente_eventos.evento_codigo='509') OR (cliente_eventos.evento_codigo='516'))";
+								break;
+							case "4":
+								$query .= " AND ((cliente_eventos.evento_codigo='504') OR (cliente_eventos.evento_codigo='510') OR (cliente_eventos.evento_codigo='517'))";
+								break;
+							case "5":
+								$query .= " AND ((cliente_eventos.evento_codigo='505') OR (cliente_eventos.evento_codigo='511') OR (cliente_eventos.evento_codigo='518'))";
+								break;
+							default:
+								$query .= " AND ((cliente_eventos.evento_codigo>499) AND (cliente_eventos.evento_codigo<520))";
+								break;							
+						}
+						break;
+					case 'U':
+					case 'u':
+						$query .= " AND cliente_eventos.nodo_ip='".substr($nodo_mac[$ii],10,2)."' AND cliente_eventos.gw_id='".$gw_id[$ii]."'";
+						$numsensorUTC = 300 + $num_sensor_informe[$ii];	
+						$query .= " AND cliente_eventos.evento_codigo='".$numsensorUTC."' ";	
+						break;
+						
+					default:
+						break;
+				}
+							
+				$query .= " AND year(evento_fecha)>2000 and year(evento_fecha)<2100 ";
+				if($tipo_graficas[$ii]=='1')
+				{
+					$query .= " group by day(cliente_eventos.evento_fecha)";
+				}
+				elseif ($tipo_graficas[$ii]=='2') 
+				{
+					$query .= " group by day(cliente_eventos.evento_fecha),hour(cliente_eventos.evento_fecha)";
+				}
+				$query .=" ORDER BY evento_fecha)";
+				$query_final .= $query;
+				$primero = 0;
+			}
+			
+			if ($anyo_actual<$anyo_end)
+			{
+				if ($mes_actual<12)
+				{
+					$mes_actual++;
+				}
+				else
+				{
+					$mes_actual=1;
+					$anyo_actual++;
+				}
+				$cadena_actual=sprintf("%02u%04u", $mes_actual, $anyo_actual);
+			}
+			else if ($anyo_actual==$anyo_end)
+			{
+				if ($mes_actual<$mes_end)
+				{
+					$mes_actual++;
+					$cadena_actual=sprintf("%02u%04u", $mes_actual, $anyo_actual);
+				}
+				else
+				{
+					$cadena_actual='FIN';
+				}
+			}
+		}
+		$query_final .= ") as tabla order by fecha";
+		//echo $query_final.'<br/>';
+		$result = false;
+		if (($query_final != "") && ($primero != 1))
+		{
+			$result = mysql_query($query_final,$link) or die('DIE:'.mysql_error()."<br>".$query_final);
+		}
+		
+		if($result)
+		{			
+			//$iTotalResultados=mysql_num_rows($result);
+			$ijResults = 0;
+			$nombre_curva = $idiomas[$_SESSION['opcion_idioma']]['general143'];
+			$inicio = 0;
+			$valor_anterior = 0;
+			while ($row = mysql_fetch_array($result))
+			{
+				$valores_raw[$ijResults] = hexdec($row['valor']);
+				$valores_fechas[$ijResults] = $row['fecha'];				
+				switch ($tipo_dispositivo[$ii])
+				{
+					case 'N':
+					case 'n':
+						// Si es un gradiente, la conversion es diferente
+						if (($row['evento_codigo']>511) && ($row['evento_codigo']<518))
+						{
+							$valores_conv[$ijResults]=sConvertir_Datos_Nodo(hexdec($row['valor']), $row['tiposensor'],1,'G',0,$row['operacion'],$row['constante'], $row['gw_id'], $row['nodo_ip'], ((intval($row['evento_codigo'])-499)%6));
+						}
+						else
+						{
+							$valores_conv[$ijResults]=sConvertir_Datos_Nodo(hexdec($row['valor']), $row['tiposensor'],1,'D',0,$row['operacion'],$row['constante'], $row['gw_id'], $row['nodo_ip'], ((intval($row['evento_codigo'])-499)%6));
+						}
+						if ($row['sensor_nombre'] != "")
+						{
+							$nombre_curva = $row['sensor_nombre'];
+						}
+						else
+						{
+							$nombre_curva = $idiomas[$_SESSION['opcion_idioma']]['general102'].' '.sObtener_Cadena_Numero_Sensor($row['evento_codigo']).' ('.sObtener_Cadena_Tipo_Sensor($row['tiposensor']).') '.$idiomas[$_SESSION['opcion_idioma']]['general144'].' '.$row['nodo_mac'];
+						}
+						break;
+				
+					case 'G':
+					case 'g':
+						$valores_conv[$ijResults] = sConvertir_Datos_GW(hexdec($row['valor']), $row['tiposensor'],1,'D', $row['gw_id'], (intval($row['evento_codigo'])%25),1);
+						$nombre_curva = sObtener_Cadena_Tipo_Sensor_GW($row['tiposensor']);
+						break;
+					case 'U':
+					case 'u':
+						$valores_conv[$ijResults] = sConvertir_Datos_UTC(hexdec($row['valor']), $row['tiposensor'],1,$row['modbus_operacion'],$row['modbus_operando']);
+						/*$numero_magnitud = "";
+						if(substr($row['tiposensor'],2,1) != '0')
+						{
+							$numero_magnitud = substr($row['tiposensor'],2,1);
+						}*/
+						$nombre_curva = sObtener_Cadena_Tipo_Sensor_UTC(substr($row['tiposensor'],0,2),substr($row['tiposensor'],2,1))." de UTC ".$row['nodo_ip'];
+						break;
+				}
+				if(($tipo_graficas[$ii]=='0') || ($magnitudes_disp[$ii]=='PLU'))
+				{
+					$pair = array( (float)($valores_fechas[$ijResults]+(date('Z')*1000)), (float)$valores_conv[$ijResults] );
+					array_push($data_series, $pair);
+				}
+				else
+				{
+					if($inicio==0)
+					{
+						$inicio = 1;
+						$valor_anterior = $valores_conv[$ijResults];
+						//echo "Es el primer valor y es ".$valor_anterior."</br>";
+					}
+					else
+					{
+						$pair = array( (float)($valores_fechas[$ijResults]), (float)($valores_conv[$ijResults]-$valor_anterior) );
+						//echo "A ".$valores_conv[$ijResults]." le restamos ".$valor_anterior." y da ".$pair[1]."</br>";
+						$valor_anterior = $valores_conv[$ijResults];
+						array_push($data_series, $pair);
+					}
+				}
+			    $ijResults++;
+			}
+			mysql_free_result($result);
+			
+			//echo "BUCLE desde ".$timestamp_inicio." a ".$timestamp_final."<br/>";
+			//echo "TOTAL medidas ".$ijResults." desde ".$timestamp_inicio." a ".$timestamp_final." es ".count($valores_conv)."<br/>";
+			//echo "TOTAL puntos ".($timestamp_final-$timestamp_inicio+1)."<br/>";
+			//echo 'Comparando mag '.$ii.' de '.$magnitudes_disp[$ii].' con 0 de tipo '.$mag_inicial.'<br/>';
+			
+			$data_temp[$ii] = array(valores=>$data_series);
+			
+			//array_push($data_output, $data_temp[$ii]);
+		}
+		else
+		{
+			$data_temp[$ii] = 0;
+		}
+	}
+	else
+	{
+		$data_temp[$ii] = 0;
+	}
+	
+	
+}	
+$data_output = array ($data_temp[0], $data_temp[1], $data_temp[2], $data_temp[3]);
+echo json_encode($data_output);
+mysql_close($link);
+?>

@@ -1,0 +1,490 @@
+html { font-family:Arial, sans-serif;}
+html, body { margin:0; padding:0; }
+
+.escondido {
+	visibility: hidden;
+	opacity:	0;	
+}
+
+.mostrado {
+	visibiliy:	visible;
+	opacity:	1;
+}
+
+.Fondo_Web {
+	background			:#999;
+}
+.Fondo_Tabla {
+	background			:#FFF;	
+}
+
+.MapBox {
+  	margin				: 0px 0px 0px 0px;
+  	padding				:10px;
+  	text-align			:left;
+	border				:2px solid #FFF;
+	background			:#FFF;
+}
+
+.TextoMenu {
+	color:				#FFF;
+	text-decoration		:underline;
+}
+
+.TextoMenu:hover{
+background-color: black;
+color: white;
+}
+
+.TextoMenuINV {
+	color:				#020202;
+	text-decoration		:none;
+	font-size			:14px;
+}
+
+.TextoMenuINV:hover{
+background-color: black;
+color: white;
+}
+
+.TextoMenuINVNH {
+	color:				#020202;
+	text-decoration		:none;
+	font-size			:14px;
+}
+
+.LoginBox {
+  	margin				:1in auto;
+  	padding				:20px;
+  	text-align			:left;
+	border				:10px solid #515151;
+	background			:#515151
+}
+
+.boton_fino {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:110px
+}
+
+.boton_fino [disabled]{
+	background-color	:#424242;
+}
+
+.boton_fino_medio {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:160px
+}
+
+.boton_fino_largo {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:180px
+}
+
+.boton_fino_muy_largo {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:200px
+}
+
+.boton_fino_corto {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:95px
+}
+
+.boton_fino_file {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:275px
+}
+
+.boton_fino_file_largo {
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	height				:25px;
+	width				:350px
+}
+
+.texto_login 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#505050;
+	font-weight			:bold;
+}
+
+.texto_secciones 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#515151;
+	font-weight			:bold;
+}
+
+.texto_parametros 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#020202;
+	font-weight			:bold;
+}
+
+.texto_valores 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#020202;
+}
+
+.texto_titulos_div
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:20px;
+	color				:#F1F1F1;
+}
+
+
+.RFNETtextBold
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#F2F2F2;
+	font-weight: 		bold;
+}
+.RFNETtext
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#F2F2F2;
+}
+
+.RFNETtextINV
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#020202;
+	background			:#FFF;
+}
+
+.RFNETtextborder
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#F2F2F2;
+	border				:2px solid #FFFFFF;
+}
+
+.RFNETtextborderBold
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#F2F2F2;
+	font-weight: 			bold;
+	border				:2px solid #FFFFFF;
+	background			:#323232;
+}
+
+.RFNETBold
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#FFF;
+	font-weight: 			bold;
+	border				:2px solid #FFFFFF;
+	background			:#323232;
+}
+
+.etiqueta_texto 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#eee;
+	height				:30px;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+  	text-align			:left;
+}
+
+.etiqueta_tooltip 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#000;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+}
+
+.etiqueta_valor_tooltip 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:13px;
+	color				:#00F;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+}
+
+.etiqueta_valor_tooltip_umbral 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:13px;
+	color				:#FF4500;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+}
+
+.etiqueta_valor_tooltip_gradiente
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:13px;
+	color				:#FFFF00;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+}
+
+.tooltip {
+  	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:10px;
+	color				:#FFF;
+	height				:10px;
+	margin				: 0px 0px 0px 0px;
+  	padding				:0px;
+  	text-align			:center;
+}
+
+.texto_titulo_tooltip 
+{
+	font-family			:Arial, Helvetica, sans-serif; 
+	font-size			:12px;
+	color				:#020202;
+	font-weight			:bold;
+}
+
+.tipo_fila_tooltip 
+{
+	/*background-color: #0F0F0F;*/
+	background-color: #CFCFCF;
+}
+
+
+.tipo_fila_1 
+{
+	/*background-color: #0F0F0F;*/
+	background-color: #6F6F6F;
+}
+
+.tipo_fila_2 
+{
+	/*background-color: #3F3F3F;*/
+	background-color: #8F8F8F;
+}
+
+/***************************************************************************************************************************************
+Caja Exterior Claro Interior Oscuro
+****************************************************************************************************************************************/
+/*********************
+Cajas Bordes Redondeados
+*********************/
+
+div.rounded-little-box {
+    position: relative;
+    width: 23em;
+	/*width: 90%;*/
+    background-color: #CCCCCC;
+    margin: 0px auto;
+}
+
+div.rounded-middle-box {
+    position: relative;
+    width: 30em;
+	/*width: 90%;*/
+    background-color: #CCCCCC;
+    margin: 0px auto;
+}
+
+div.rounded-big-box {
+    position: relative;
+    /*width: 40em;*/
+	width: 90%;
+    background-color: #CCCCCC;
+    margin: 8px auto;
+}
+
+div.rounded-medium-box {
+    position: relative;
+    /*width: 37em;*/
+	width: 100%;
+    background-color: #CCCCCC;
+    margin: 8px auto;
+}
+
+div.top-left-corner, div.bottom-left-corner, div.top-right-corner, div.bottom-right-corner {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #FFF;
+	overflow: hidden;
+	z-index: 0;
+}
+
+div.top-left-inside, div.bottom-left-inside, div.top-right-inside, div.bottom-right-inside {
+	position: relative;
+	font-size: 150px;
+	font-family: arial;
+	color: #CCCCCC;
+	line-height: 40px;
+	z-index: 0;
+}
+
+/*********************
+Contenido (txt)
+*********************/
+
+div.box-contents {
+	position: relative;
+	padding: 10px;
+	color:#000;
+	/*font-weight: bolder;*/
+	z-index: 1;
+}
+
+/*********************
+Bordes
+*********************/
+
+div.top-left-corner { top: 0px; left: 0px; }
+div.bottom-left-corner {bottom: 0px; left: 0px;}
+div.top-right-corner {top: 0px; right: 0px;}
+div.bottom-right-corner {bottom: 0px; right: 0px;}
+div.top-left-inside {left: -8px;}
+div.bottom-left-inside {left: -8px; top: -17px;}
+div.top-right-inside {left: -25px;}
+div.bottom-right-inside {left: -25px; top: -17px;}
+
+
+/*********************
+Bordes externos para tablas html
+*********************/
+
+.left_tborder {border-left: 1px solid black;}
+.right_tborder{border-right: 1px solid black;}
+.top_tborder {border-top: 1px solid black;}
+.bottom_tborder {border-bottom: 1px solid black;}
+
+/*********************
+Cajas Bordes Redondeados
+*********************/
+
+div.rounded2-little-box {
+    position: relative;
+    width: 23em;
+    background-color: #606060;
+    margin: 0px auto;
+}
+
+div.rounded2-big-box {
+    position: relative;
+	width: 90%;
+    background-color: #606060;
+    margin: 8px auto;
+}
+
+div.rounded2-medium-box {
+    position: relative;
+	width: 100%;
+    background-color: #606060;
+    margin: 8px auto;
+}
+div.top2-left-corner, div.bottom2-left-corner, div.top2-right-corner, div.bottom2-right-corner {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #AFAFAF;
+	overflow: hidden;
+	z-index: 0;
+}
+div.top2-left-inside, div.bottom2-left-inside, div.top2-right-inside, div.bottom2-right-inside {
+	position: relative;
+	font-size: 150px;
+	font-family: arial;
+	color: #606060;
+	line-height: 40px;
+	z-index: 0;
+}
+
+
+
+/*********************
+Bordes
+*********************/
+
+div.top2-left-corner { top: 0px; left: 0px; }
+div.bottom2-left-corner {bottom: 0px; left: 0px;}
+div.top2-right-corner {top: 0px; right: 0px;}
+div.bottom2-right-corner {bottom: 0px; right: 0px;}
+div.top2-left-inside {left: -8px;}
+div.bottom2-left-inside {left: -8px; top: -17px;}
+div.top2-right-inside {left: -25px;}
+div.bottom2-right-inside {left: -25px; top: -17px;}
+
+div.box2-contents {
+	position: relative;
+	padding: 10px;
+	color:#000;
+	/*font-weight: bolder;*/
+	z-index: 1;
+}
+/*------------------------------------------------------------*
+**  Nav
+**------------------------------------------------------------*/
+
+#nav {
+        background: #ccc;
+        border-top: 1px solid #FFFFFF;
+        border-bottom: 1px solid #FFFFFF;
+        margin: 0;
+        padding: 1px 3px;
+        height: 30px;
+        }
+#nav li {
+        list-style-type: none;
+        display: inline;
+        line-height: 20px;
+        }
+#nav li a {
+        text-decoration: none;
+        color: #333;
+        background-color: #ccc;
+        border:1px solid #FFFFFF;
+        margin:1px;
+        padding: 3px 6px;
+        font-size: 10pt;
+        float: left;
+        font-weight: bold;
+        width:80px;
+        letter-spacing:-1px;
+        text-align:center;
+        }
+#nav li a:hover { background-color: #FFFFFF;color: #000000;letter-spacing:0px;}
+#nav li a.on { background-color: #FFFFFF; color: #000000; }
+
+.tickLabel { font-size: 80% }
+
+#tooltip_mapa {
+	overflow: hidden;
+}

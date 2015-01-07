@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Import memory images</title>
+<style type="text/css">
+body {font-family:"Times New Roman",serif}
+h1 {font-size:150%; color:#4000A0}
+h4 {font-weight:bold; color:#900000}
+</style>
+</head>
+<body>
+<h1>Import memory images</h1>
+<h4>Informations</h4>
+Author: <a href="mailto:XavierNicolay@ifrance.com?subject=Import%20memory%20images">Xavier Nicolay</a><br>
+License: FPDF
+<h4>Description</h4>
+This script allows to display images that are loaded in memory without the need of
+temporary files. There are 2 main usages:<BR>
+<BR>
+- When an image is retrieved from a database<BR>
+- When an image is created with GD<BR>
+<BR>
+<TT>MemImage(<B>string</B> data, <B>float</B> x, <B>float</B> y [, <B>float</B> w [, <B>float</B> h, [<B>array</B> link]]])</TT><BR>
+<BR>
+<TT>$data</TT> holds the image in memory. It must be in PNG format.<BR>
+<BR>
+<TT>GDImage(<B>resource</B> im, <B>float</B> x, <B>float</B> y [, <B>float</B> w [, <B>float</B> h, [<B>array</B> link]]])</TT><BR>
+<BR>
+<TT>$im</TT> is a GD identifier. If you use JpGraph, you can retrieve it via a call to
+<TT>$graph->Stroke(_IMG_HANDLER)</TT>.<BR>
+<BR>
+Moreover, this script allows to call the standard Image() method with a URL of the form:<BR>
+<BR>
+<TT>var://variable</TT><BR>
+<BR>
+where <TT>variable</TT> is a global variable holding an image (PNG or JPEG).
+</body>
+</html>
